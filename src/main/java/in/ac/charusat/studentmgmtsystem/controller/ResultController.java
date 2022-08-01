@@ -18,27 +18,27 @@ public class ResultController {
         return resultRepository.findAll();
     }
 
-    // Get the student information
+    // Get the student result information
     @GetMapping("/student/result/{id}")
     public StudentResult getStudentResult(@PathVariable Integer id) {
         return resultRepository.findById(id).get();
     }
 
-    //Delete the student
+    //Delete the student result
     @DeleteMapping("/student/result/{id}")
     public List<StudentResult> deleteStudentResult(@PathVariable Integer id) {
         resultRepository.delete(resultRepository.findById(id).get());
         return resultRepository.findAll();
     }
 
-    // Add new student
+    // Add new student result
     @PostMapping("/student/result")
     public List<StudentResult> addStudentResult(@RequestBody StudentResult studentResult) {
         resultRepository.save(studentResult);
         return resultRepository.findAll();
     }
 
-    // Update the student information
+    // Update the student result information
     @PutMapping("/student/result/{id}")
     public List<StudentResult> updateStudentResult(@RequestBody StudentResult studentResult, @PathVariable Integer id) {
         StudentResult studentResultObj = resultRepository.findById(id).get();

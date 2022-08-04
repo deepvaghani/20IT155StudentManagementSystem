@@ -16,16 +16,7 @@ public class StudentController {
 
     @Autowired
     StudentRepository studentRepository;
-//    List<Student> students = new ArrayList<>(
-//            Arrays.asList(
-//                    new Student(1, "Tom", "US"),
-//                    new Student(2, "Harry", "Canada"),
-//                    new Student(3, "Nick", "UK")
-//            )
-//    );
 
-    // Mappings - URL endpoints
-    // Get the list of all student
     @GetMapping("/listStudents")
     public List<Student> getAllStudents() {
         return studentRepository.findAll();

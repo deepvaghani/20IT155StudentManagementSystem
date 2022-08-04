@@ -36,7 +36,7 @@ public class StudentController {
     }
 
     // Add new student
-        @PostMapping("/student")
+    @PostMapping("/student")
     public List<Student> addStudent(@RequestBody Student student) {
         studentRepository.save(student);
         return studentRepository.findAll();

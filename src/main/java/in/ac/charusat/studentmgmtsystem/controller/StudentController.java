@@ -13,7 +13,6 @@ import java.util.Optional;
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
 public class StudentController {
-
     @Autowired
     StudentRepository studentRepository;
 
@@ -37,9 +36,9 @@ public class StudentController {
 
     // Add new student
     @PostMapping("/student")
-    public String addStudent(@RequestBody Student student) {
+    public List<Student> addStudent(@RequestBody Student student) {
         studentRepository.save(student);
-        return "Student Record Added Successfully";
+        return studentRepository.findAll();
     }
 
     // Update the student information

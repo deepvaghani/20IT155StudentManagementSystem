@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin(origins = "https://app-20it155studentmgmtsystem.herokuapp.com/")
+@CrossOrigin(origins = "http://localhost:3000")
 public class StudentController {
     @Autowired
     StudentRepository studentRepository;

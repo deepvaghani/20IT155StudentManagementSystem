@@ -13,6 +13,12 @@ public class StudentController {
     @Autowired
     StudentRepository studentRepository;
 
+    @GetMapping
+    public String WelcomeUser()
+    {
+        return
+                "<h1>Welcome User</h1>";
+    }
     @GetMapping("/listStudents")
     public List<Student> getAllStudents() {
         return studentRepository.findAll();
